@@ -1,0 +1,16 @@
+@import "../../scss/main";
+
+.ToolBar {
+    background: rgb(195,120,255);
+    background: $gradient-purple;
+    height: 10%;
+    display: flex;
+
+    h1 {
+        color: $grey-light;
+        font-family: $font-main;
+        font-weight: normal;
+        font-size: 1.3em;
+        margin: auto $margin-default;
+    }
+}

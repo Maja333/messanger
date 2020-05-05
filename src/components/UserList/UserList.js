@@ -1,18 +1,16 @@
-import React from 'react';
-import './UserList.scss';
+import React from "react";
+import "./UserList.scss";
 
-const UserList = () => {
-    return (
-        <div className='UserList'>
-            <ul>
-                <li>Nick 1</li>
-                <li>Nick 2</li>
-                <li>Nick 3</li>
-                <li>Nick 4</li>
-            </ul>
-    
-        </div>
-    )
-}
+const UserList = props => {
+  const { userList } = props;
+
+  const li = userList.map((el, index) => <li key={index}>{el}</li>);
+
+  return (
+    <div className="UserList">
+      <ul>{li}</ul>
+    </div>
+  );
+};
 
 export default UserList;

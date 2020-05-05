@@ -1,16 +1,27 @@
 @import "../../scss/main";
 
 .ToolBar {
-    background: rgb(195,120,255);
-    background: $gradient-purple;
-    height: 10%;
+    background: rgb(0,190,160);
+    background: $gradient-green;
     display: flex;
-
+    flex-direction: column;
+    align-items: flex-start;
+p {
+    background-color: $grey-light;
+    color: $green-dark;
+    font-family: $font-main;
+    font-weight: 700;
+    font-size: 0.8em;
+    padding: 5px;
+    letter-spacing: 2px;
+    margin: 20px $margin-default 8px $margin-default ;
+}
     h1 {
         color: $grey-light;
         font-family: $font-main;
-        font-weight: normal;
-        font-size: 1.3em;
-        margin: auto $margin-default;
+        font-weight: 100;
+        font-size: 1.5em;
+        margin:0 $margin-default 10px $margin-default ;
+        letter-spacing: 3px;
     }
 }

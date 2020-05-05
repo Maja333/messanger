@@ -1,27 +1,21 @@
 import React from "react";
 import "./MessageList.scss";
 
-const MessageList = () => {
+const MessageList = props => {
+  const { messageList, nick } = props;
+
+  const li = messageList.map((el, index) => (
+    <li key={index}>
+      <div className={nick === el.nick ? "message myComment" : "message"}>
+        <p>{el.message}</p>
+        <p className="time">{el.hour}</p>
+      </div>
+    </li>
+  ));
+
   return (
     <div className="MessageList">
-      <ul>
-        <li className="myComment">
-          <p className="message">wiadomosc wiadomosc wiadomosc wiadomosc</p>
-          <p className="time">12:00</p>
-        </li>
-        <li>
-          <p className="message">wiadomosc 1</p>
-          <p className="time">12:00</p>
-        </li>
-        <li className="myComment">
-          <p className="message">wiadomosc 1</p>
-          <p className="time">12:00</p>
-        </li>
-        <li>
-          <p className="message">wiadomosc 1</p>
-          <p className="time">12:00</p>
-        </li>
-      </ul>
+      <ul>{li}</ul>
     </div>
   );
 };

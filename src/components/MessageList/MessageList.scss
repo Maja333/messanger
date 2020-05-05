@@ -1,33 +1,34 @@
 @import "../../scss/main";
 
 .MessageList {
- 
-  width: 100%;
-  height: 100%;
   display: block;
   font-family: $font-main;
   color: $grey-dark;
 
-  li{
+  li {
     list-style: none;
-    padding: 10px 30px;
-    background-color: white;
-    border-radius: 50px 50px 0 50px;
-    margin: 20px $margin-default;
-   
-    &.myComment{
-      background-color: $green-light;
-      border-radius: 50px 50px 50px 0px;
-      text-align: right;
-    }
-    
-    .time{
-      color: lighten(#595959,30);
+    margin: 15px $margin-default;
+    display: flex;
+    flex-direction: column;
+
+    .time {
+      color: lighten(#595959, 30);
       font-size: 0.8em;
     }
+    .message {
+      background-color: white;
+      border-radius: 50px 50px 50px 0;
+      display: inline-block;
+      padding: 8px 20px;
+      align-self: flex-start;
+      min-width: 200px;
+
+      &.myComment {
+        background-color: $green-light;
+        border-radius: 50px 50px 0 50px;
+        text-align: right;
+        align-self: flex-end;
+      }
+    }
   }
-
-
-  
-
 }

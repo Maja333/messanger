@@ -18,16 +18,30 @@
       &::placeholder {
         color: darken($grey-light, 20);
         font-size: 1.3em;
-        font-family: $font-main;
+        font-family: $font-second;
       }
     }
 
-    button {
-        border: 1px solid black;
+    .btn-round {
+        border: 2px solid darken($grey-light, 15);
         width: 50px;
         height: 50px;
         border-radius: 50%;
         margin-left: 30px;
+        position: relative;
+        
+    }
+  
+    .btn-round::after {
+        content:url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path style="fill:gray" d="M24 0l-6 22-8.129-7.239 7.802-8.234-10.458 7.227-7.215-1.754 24-12zm-15 16.668v7.332l3.258-4.431-3.258-2.901z"/></svg>');
+        position: absolute;
+        top:10px;
+        left:07px;
+        width: 25px;
+        height: 25px;
+   
     }
   }
 }
+
+// <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>

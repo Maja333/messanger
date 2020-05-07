@@ -6,7 +6,7 @@ const MessageList = props => {
 
   const li = messageList.map((el, index) => (
     <li key={index}>
-      <div className={nick === el.nick ? "message myComment" : "message"}>
+      <div className={nick.nick === el.nick ? "message myComment" : "message"}>
         <p>{el.message}</p>
         <p className="time">{el.hour}</p>
       </div>

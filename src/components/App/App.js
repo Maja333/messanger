@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import Cookies from 'universal-cookie';
 import "./App.scss";
 import ChatInput from "../ChatInput/ChatInput";
 import Form from "../Form/Form";
@@ -7,26 +8,104 @@ import UserList from "../UserList/UserList";
 import ToolBar from "../ToolBar/ToolBar";
 
 function App() {
-  const [userList, setUserList] = useState(["szczur", "szczur1", "szczur2"]);
-  const [messageList, setMessageList] = useState([
-    { message: "m1", nick: "szczur1", hour: "12:00"},
-    { message: "m2", nick: "szczur", hour: "15:00"},
-    { message: "m3", nick: "szczur2", hour: "1:00"}
-  ]);
-  const [nick, setNick]=useState(false);
+  const [userList, setUserList] = useState([]);
+  const [messageList, setMessageList] = useState([]);
+  const [nick, setNick] = useState(false);
+  const [error, setError] = useState(false)
+
+  const cookies = new Cookies();
+
+  useEffect(()=>{
+    const checkCookie = cookies.get('nick');
+    if(checkCookie !== undefined){
+      setNick(checkCookie);
+    }
+    refreshData();
+  },[]);
+
+  const refreshData = () => {
+    fetch('http://localhost:3000/messages')
+    .then(response => response.json())
+    .then(data => {
+      setMessageList(data);
+    })
+
+    fetch('http://localhost:3000/userList')
+    .then(response => response.json())
+    .then(data => {
+      setUserList(data);
+    })
+  };
+
+
 
   const saveNick = (nickName) =>  {
-    setNick(nickName);
-    setUserList([...userList,nickName]);
+
+    const arr = userList.filter((el)=>{
+      return  el.nick === nickName;
+    })
+
+    if(arr.length > 0) {
+      setError(true);
+      return
+    }
+    else {
+      setError(false)
+    }
+
+    fetch('http://localhost:3000/userList', {
+      method: 'POST',
+      body: JSON.stringify({nick: nickName}),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(response => response.json())
+      .then ((data) => {
+        cookies.set('nick', data , { path: '/' });
+        setNick(data);
+        console.log(data);
+        refreshData()
+      })
+
   };
 
   const saveMessage = (message) => {
-    setMessageList([...messageList,{message:message, nick:nick, hour:`${new Date().getHours()} : ${new Date().getMinutes()}`}]);
+
+    if(message === ""){
+      return;
+    }
+
+    const msg = {
+      message: message, 
+      nick: nick.nick, 
+      hour: `${new Date().getHours()} : ${new Date().getMinutes()}`
+    };
+
+    fetch('http://localhost:3000/messages', {
+      method: 'POST',
+      body: JSON.stringify(msg),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+      .then (() => refreshData())
+  };
+
+  const logOut = () =>  {
+    setNick(false);
+    cookies.remove('nick');
+
+
+    fetch(`http://localhost:3000/userList/${nick.id}`, {
+      method: 'DELETE'
+    })
+      .then (() => refreshData())
   };
 
   return (
     <div className="container">
-      {nick === false ?  <Form callback={saveNick}/> :  <></> }
+      {nick === false ?  <Form callback={saveNick} error={error}/> :  <></> }
       <ToolBar />
       <div className="content">
         <div className="left">
@@ -38,7 +117,7 @@ function App() {
           </div>
         </div>
         <div className="right">
-          <UserList userList={userList} />
+          <UserList userList={userList} logOut={logOut}/>
         </div>
       </div>
     </div>

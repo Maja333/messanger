@@ -7,9 +7,17 @@ $purple: #C378FF;
 $violet:#D282FF;
 $blue:#A0B9FF;
 
+$red: #fa6f86;
+
 $grey-light:#F5F5F5;
 $grey-dark:#595959;
 
-$gradient-purple:linear-gradient(90deg, rgba(195,120,255,1) 0%, rgba(210,130,255,1) 52%, rgba(160,185,255,1) 82%);
+$gradient-purple: linear-gradient(45deg, rgba(195,120,255,1) 0%, rgba(210,130,255,1) 40%, rgba(160,185,255,1) 100%);
+$gradient-purple-bcg:rgb(195,120,255);
 
-$gradient-green: linear-gradient(90deg, rgba(0,190,160,1) 0%, rgba(80,230,200,1) 47%, rgba(211,242,236,1) 87%);
+
+$gradient-green: linear-gradient(90deg, rgba(0,190,160,1) 0%, rgba(80,230,200,1) 40%, rgba(211,242,236,1) 87%);
+$gradient-green-bcg:  rgb(0,190,160);
+
+$gradient-blue: linear-gradient(30deg, rgba(160,185,255,1) 0%, rgba(210,130,255,1) 100%, rgba(195,120,255,1) 100%);
+$gradient-blue-bcg:rgb(160,185,255);

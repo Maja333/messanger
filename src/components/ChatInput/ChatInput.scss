@@ -2,6 +2,7 @@
 
 .ChatInput {
   background-color: white;
+  height: 100px;
 
   .flex {
     display: flex;
@@ -16,8 +17,8 @@
   
 
       &::placeholder {
-        color: darken($grey-light, 20);
-        font-size: 1.3em;
+        color: lighten($grey-dark, 20);
+        font-size: 1.5em;
         font-family: $font-second;
       }
     }

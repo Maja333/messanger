@@ -8,10 +8,15 @@ const MessageList = props => {
     <li key={index}>
       <div className={nick.nick === el.nick ? "message myComment" : "message"}>
         <p>{el.message}</p>
-        <p className="time">{el.hour}</p>
+        <div className="under">
+          <p className="nick">{el.nick}</p>
+          <p className="time">{el.hour}</p>
+        </div>
       </div>
     </li>
   ));
+
+
 
   return (
     <div className="MessageList">
@@ -21,3 +26,4 @@ const MessageList = props => {
 };
 
 export default MessageList;
+

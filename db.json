@@ -1,101 +1,47 @@
 {
   "messages": [
     {
-      "id": 1,
-      "message": "m1",
-      "nick": "szczur1",
-      "hour": "12:00"
+      "message": "spie",
+      "nick": "ori",
+      "hour": "9 : 44",
+      "id": 1
     },
     {
-      "id": 2,
-      "message": "m2fddf",
-      "nick": "szczur",
-      "hour": "15:00"
+      "message": "ja tez",
+      "nick": "lilo",
+      "hour": "9 : 45",
+      "id": 2
     },
     {
-      "message": "jfhgdljg",
-      "nick": "hfhf",
-      "hour": "14 : 59",
+      "message": "jesz cos?",
+      "nick": "ori",
+      "hour": "9 : 45",
       "id": 3
     },
     {
-      "message": "dkfjslfj",
-      "nick": "hfhf",
-      "hour": "14 : 59",
+      "message": "moze a co?",
+      "nick": "lilo",
+      "hour": "9 : 45",
       "id": 4
     },
     {
-      "message": "kdjhfksdjhf",
-      "nick": "hfhf",
-      "hour": "15 : 0",
+      "message": "co robicie?",
+      "nick": "myszy",
+      "hour": "9 : 46",
       "id": 5
-    },
-    {
-      "message": "dkfhlsfj",
-      "nick": "hfhf",
-      "hour": "15 : 0",
-      "id": 6
-    },
-    {
-      "message": "dkfjsljf",
-      "nick": "hfhf",
-      "hour": "15 : 0",
-      "id": 7
-    },
-    {
-      "message": "dfjsgkedghsfhihlg",
-      "nick": "hfhf",
-      "hour": "15 : 0",
-      "id": 8
-    },
-    {
-      "message": "fjhkj",
-      "nick": "hfhf",
-      "hour": "15 : 0",
-      "id": 9
-    },
-    {
-      "message": "o",
-      "nick": "hfhf",
-      "hour": "15 : 0",
-      "id": 10
-    },
-    {
-      "message": "o",
-      "nick": "hfhf",
-      "hour": "15 : 0",
-      "id": 11
-    },
-    {
-      "message": "o",
-      "nick": "hfhf",
-      "hour": "15 : 0",
-      "id": 12
-    },
-    {
-      "message": "jhfkjdhgkjdfh",
-      "nick": "maja",
-      "hour": "16 : 20",
-      "id": 13
-    },
-    {
-      "message": "gghgfh",
-      "nick": "maja",
-      "hour": "16 : 20",
-      "id": 14
     }
   ],
   "userList": [
     {
-      "id": 1,
-      "nick": "ori"
+      "nick": "ori",
+      "id": 1
     },
     {
-      "id": 2,
-      "nick": "lilo"
+      "nick": "lilo",
+      "id": 2
     },
     {
-      "nick": "maja",
+      "nick": "myszy",
       "id": 3
     }
   ]

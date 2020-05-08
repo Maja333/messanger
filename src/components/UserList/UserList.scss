@@ -32,5 +32,10 @@
     font-size: 0.8em;
     font-weight: bold;
     letter-spacing: 2px;
+
+    &:hover {
+      background: $blue;
+      cursor: pointer;
+    }
   }
 }

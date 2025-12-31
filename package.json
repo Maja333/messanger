@@ -9,7 +9,7 @@
     "node": "^14.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1",
+    "react-scripts": "5.0.1",
     "sass": "^1.26.5",
     "universal-cookie": "^4.0.3",
     "whatwg-fetch": "^3.0.0"
